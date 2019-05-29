@@ -1,15 +1,15 @@
-//ÅĞ¶ÏÒ»¸ö×Ö·û´®ÊÇ·ñÎªÁíÍâÒ»¸ö×Ö·û´®Ğı×ªÖ®ºóµÄ×Ö·û´®¡£
-//ÀıÈç£º¸ø¶¨s1 = AABCDºÍs2 = BCDAA£¬·µ»Ø1
-//¸ø¶¨s1 = abcdºÍs2 = ACBD£¬·µ»Ø0.
-//AABCD×óĞıÒ»¸ö×Ö·ûµÃµ½ABCDA
-//AABCD×óĞıÁ½¸ö×Ö·ûµÃµ½BCDAA
-//AABCDÓÒĞıÒ»¸ö×Ö·ûµÃµ½DAABC
+//åˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯å¦ä¸ºå¦å¤–ä¸€ä¸ªå­—ç¬¦ä¸²æ—‹è½¬ä¹‹åçš„å­—ç¬¦ä¸²ã€‚
+//ä¾‹å¦‚ï¼šç»™å®šs1 = AABCDå’Œs2 = BCDAAï¼Œè¿”å›1
+//ç»™å®šs1 = abcdå’Œs2 = ACBDï¼Œè¿”å›0.
+//AABCDå·¦æ—‹ä¸€ä¸ªå­—ç¬¦å¾—åˆ°ABCDA
+//AABCDå·¦æ—‹ä¸¤ä¸ªå­—ç¬¦å¾—åˆ°BCDAA
+//AABCDå³æ—‹ä¸€ä¸ªå­—ç¬¦å¾—åˆ°DAABC
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-int Compare(char* arr1,char* arr2 )
+int Compare(char* arr1,const char* arr2 )
 {
 	int i = 0; 
 	int j = 0;
@@ -18,7 +18,7 @@ int Compare(char* arr1,char* arr2 )
 	assert(arr2 != NULL);
 	for (i = 0; i < len;i++)
 	{
-		char tmp = arr1[0];//½«µÚÒ»¸öÔªËØ´æÆğÀ´
+		char tmp = arr1[0];//å°†ç¬¬ä¸€ä¸ªå…ƒç´ å­˜èµ·æ¥
 		for (j = 0; j < len-1; j++)
 		{
 			arr1[j] = arr1[j + 1];
@@ -34,9 +34,9 @@ int main()
 	char str1[] = "DAABC";
 	char str2[] = "AABCD";
 	if (Compare(str1, str2) == 1)
-		printf("str1Îªstr2Ğı×ªºóµÄ×Ö·û\n");
+		printf("str1ä¸ºstr2æ—‹è½¬åçš„å­—ç¬¦\n");
 	else
-		printf("str1²»Îªstr2Ğı×ªºóµÄ×Ö·û\n");
+		printf("str1ä¸ä¸ºstr2æ—‹è½¬åçš„å­—ç¬¦\n");
 	system("pause");
 	return 0;
 }
